@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0c3d36"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="SI CANTIK"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>SI CANTIK (Sistem Informasi - Cermat Akurat Transparan Informatif Komunikatif)</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f1f5f3;--sf:#fff;--ink:#14302b;--mu:#5b6f6a;--ac:#0e6b5c;--acs:#dcf0ea;--ln:#d6e1dd;--red:#b3261e;--redbg:#fde8e6;--amb:#8f5400;--ambbg:#fff0d4;--grn:#1b7a3d;--grnbg:#ddf2e3;--hd:#0c3d36;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1917;--sf:#16251f;--ink:#e4efeb;--mu:#98b0a9;--ac:#4cc3ac;--acs:#1c3a33;--ln:#2a423b;--red:#ff8f86;--redbg:#3d1d1a;--amb:#f2b45a;--ambbg:#3a2a0e;--grn:#7bd896;--grnbg:#17361f;--hd:#0a2a25}}
+:root[data-theme="dark"]{--bg:#0e1917;--sf:#16251f;--ink:#e4efeb;--mu:#98b0a9;--ac:#4cc3ac;--acs:#1c3a33;--ln:#2a423b;--red:#ff8f86;--redbg:#3d1d1a;--amb:#f2b45a;--ambbg:#3a2a0e;--grn:#7bd896;--grnbg:#17361f;--hd:#0a2a25}
+*{box-sizing:border-box}html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font:16px/1.5 "DM Sans",system-ui,sans-serif;padding-bottom:calc(76px + env(safe-area-inset-bottom,0px))}
+.w{max-width:560px;margin:0 auto;padding:0 16px}
+h1,h2{font-family:"Cormorant Garamond",Georgia,serif;margin:0}
+header{background:linear-gradient(160deg,var(--hd),color-mix(in srgb,var(--hd) 65%,var(--ac)));color:#eaf6f2;padding:24px 0 74px;border-radius:0 0 28px 28px}
+header .w{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+header h1{font-size:38px;letter-spacing:2px;line-height:1.05;font-weight:700}
+header p{margin:8px 0 0;font-size:12.5px;opacity:.88;max-width:32ch;line-height:1.4}
+.gbtn{background:rgba(255,255,255,.14);color:#fff;border:0;border-radius:20px;padding:8px 14px;font:500 13px "DM Sans";cursor:pointer;white-space:nowrap}
+.pc{display:flex;gap:14px;align-items:center;background:var(--sf);border:1px solid var(--ln);border-radius:20px;padding:16px 18px;margin-top:-54px;box-shadow:0 10px 28px rgba(8,40,34,.18)}
+.pc b{font-size:18px}.pc .r{display:flex;flex-wrap:wrap;gap:2px 14px;color:var(--mu);font-size:14px;margin-top:4px}.av{flex:none;width:48px;height:48px;border-radius:50%;background:var(--ac);color:var(--sf);display:grid;place-items:center;font:700 24px "Cormorant Garamond",serif}.pi{min-width:0}
+.al{display:flex;gap:10px;align-items:center;border-radius:12px;padding:12px 14px;margin:12px 0;font-weight:500}
+.al.y{background:var(--redbg);color:var(--red);border:1px solid var(--red)}.al.n{background:var(--grnbg);color:var(--grn)}
+main{padding-top:4px}
+h2{font-size:29px;margin:24px 0 8px;color:var(--ac);font-weight:700;line-height:1.15}
+.c{background:var(--sf);border:1px solid var(--ln);border-radius:18px;padding:16px 18px;margin:10px 0;box-shadow:0 1px 2px rgba(20,48,43,.06),0 6px 16px rgba(20,48,43,.05)}
+.f{display:flex;flex-direction:column;gap:2px;margin:0 0 10px}.f:last-child{margin:0}
+.f label{font-size:13px;color:var(--mu)}.f .v{font-weight:500}
+input,select,textarea{width:100%;font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--ln);border-radius:10px;padding:9px 11px;min-height:44px}
+textarea{min-height:72px}
+:focus-visible{outline:3px solid var(--ac);outline-offset:2px}
+.bd{display:inline-block;border-radius:20px;padding:2px 10px;font-size:13px;font-weight:500}
+.bd.w1{background:var(--ambbg);color:var(--amb)}.bd.p1{background:var(--acs);color:var(--ac)}.bd.s1{background:var(--grnbg);color:var(--grn)}
+.it{display:flex;gap:12px;align-items:flex-start}.it>div{flex:1;min-width:0}
+.ck{flex:none;width:28px;height:28px;border-radius:8px;border:2px solid var(--ln);background:var(--bg);color:#fff;font-size:17px;line-height:1;cursor:default;padding:0}
+.ck.on{background:var(--ac);border-color:var(--ac)}.ck.ed{cursor:pointer}
+.ex{color:var(--mu);font-size:14px;margin-top:4px}.mt{font-size:13px;color:var(--grn)}
+.pg{height:12px;border-radius:6px;background:var(--acs);overflow:hidden;margin:10px 0 2px}.pg i{display:block;height:100%;border-radius:6px;background:linear-gradient(90deg,var(--ac),color-mix(in srgb,var(--ac) 60%,#8fe3cf))}
+.cur{border-color:var(--ac);box-shadow:inset 4px 0 0 var(--ac)}
+.eb{position:sticky;top:0;z-index:20;background:var(--ambbg);color:var(--amb);padding:8px 0;border-bottom:1px solid var(--amb);padding-top:calc(8px + env(safe-area-inset-top,0px))}
+.eb .w{display:flex;gap:10px;align-items:center;font-size:14px}.eb input{min-height:36px;padding:4px 8px}
+.btn{border:1px solid var(--ac);background:var(--ac);color:var(--sf);border-radius:12px;padding:10px 14px;font:500 15px "DM Sans";cursor:pointer;min-height:44px}
+.btn.o{background:none;color:var(--ac)}.btn.d{background:none;color:var(--red);border-color:var(--red);padding:6px 10px;min-height:36px;font-size:13px}
+nav{position:fixed;left:0;right:0;bottom:0;background:var(--sf);border-top:1px solid var(--ln);padding-bottom:env(safe-area-inset-bottom,0px);z-index:30}
+nav .w{display:flex;padding:0;overflow-x:auto}nav a{flex:1 0 auto;min-width:60px;text-align:center;padding:14px 8px;font-size:13px;color:var(--mu);text-decoration:none;font-weight:500;border-top:3px solid transparent}
+nav a.on{color:var(--ac);border-top-color:var(--ac);background:var(--acs);font-weight:700}
+.lg{max-width:420px;margin:-48px auto 0;padding:0 16px}.lg .c{padding:24px 22px;box-shadow:0 10px 28px rgba(8,40,34,.18)}.er{color:var(--red);font-size:14px;min-height:20px}
+.ft{color:var(--mu);font-size:12px;text-align:center;margin:24px 0}
+.tb{width:100%;border-collapse:collapse;font-size:14px}.tb th{text-align:left;color:var(--mu);font-weight:500;padding:4px 6px 8px;border-bottom:1px solid var(--ln)}.tb td{padding:9px 6px;border-bottom:1px solid var(--ln)}.tb tr:last-child td{border:0}.scr{overflow-x:auto}.btn:disabled{opacity:.4;cursor:not-allowed}
+.fl{list-style:none;margin:4px 0 0;padding:0;display:grid;gap:8px}.fl li{line-height:1.4}
+.md{background:var(--acs);color:var(--ac);border-radius:12px;padding:8px 14px;font-size:13.5px;font-weight:500;text-align:center;margin:0 0 12px}
+@media(prefers-reduced-motion:no-preference){.pg i{transition:width .4s}}
+.mc{display:flex;gap:14px;align-items:center;width:100%;text-align:left;background:var(--sf);border:1px solid var(--ln);border-radius:20px;padding:18px;margin:12px 0;cursor:pointer;color:var(--ink);font:inherit;box-shadow:0 10px 28px rgba(8,40,34,.14);min-height:88px}
+.mc .ic{flex:none;width:56px;height:56px;border-radius:18px;display:grid;place-items:center;background:var(--acs);color:var(--ac)}
+.mc.n .ic{background:var(--ambbg);color:var(--amb)}
+.mc b{font-size:17px;display:block;margin-bottom:2px}.mc span{color:var(--mu);font-size:13.5px;line-height:1.4;display:block}
+.mc .ar{flex:none;margin-left:auto;color:var(--mu);font-size:22px}
+.mc:active{transform:scale(.98)}
+.chip{display:inline-block;margin-top:10px;border-radius:20px;padding:3px 12px;font-size:12.5px;font-weight:700;background:rgba(255,255,255,.18);color:#fff}
+.bk{background:none;border:0;color:var(--ac);font:500 15px "DM Sans",sans-serif;cursor:pointer;padding:8px 0;margin-bottom:6px;min-height:44px}
+.lgt{font-family:"Cormorant Garamond",Georgia,serif;font-size:30px;color:var(--ac);margin:4px 0 0;text-align:center;font-weight:700}
+.lgs{text-align:center;color:var(--mu);font-size:14px;margin:2px 0 8px}
+.rs{font-size:12px;font-weight:700;letter-spacing:.12em;opacity:.9;margin-bottom:4px}
+
+/* ===== Polish: rapi, elegan, profesional ===== */
+:root{--gd:#b08a3e;--sh1:0 1px 2px rgba(12,61,54,.06),0 8px 24px rgba(12,61,54,.07);--sh2:0 14px 36px rgba(8,40,34,.18)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--gd:#d8b66c}}
+:root[data-theme="dark"]{--gd:#d8b66c}
+body{-webkit-font-smoothing:antialiased;font-feature-settings:"tnum" 1;letter-spacing:.005em}
+.w{max-width:600px;padding:0 18px}
+header{position:relative;overflow:hidden;background:radial-gradient(120% 90% at 85% -10%,color-mix(in srgb,var(--ac) 55%,transparent),transparent 60%),linear-gradient(165deg,var(--hd),color-mix(in srgb,var(--hd) 80%,#000));padding:26px 0 80px;border-radius:0 0 30px 30px;border-bottom:2px solid var(--gd)}
+.rs{display:flex;align-items:center;gap:10px;font-size:11px;font-weight:700;letter-spacing:.2em;color:var(--gd);opacity:1;margin-bottom:8px}
+.rs::before{content:"";width:22px;height:1px;background:var(--gd)}
+header h1{font-size:40px;letter-spacing:.14em;font-weight:600}
+header p{opacity:.8;font-size:12px;letter-spacing:.03em}
+.chip{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.28);font-weight:600;letter-spacing:.06em;text-transform:uppercase;font-size:11px;padding:4px 12px}
+.gbtn{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);font-weight:500}
+.pc{border-radius:18px;box-shadow:var(--sh2);border:1px solid var(--ln);padding:18px 20px}
+.av{background:linear-gradient(145deg,var(--ac),color-mix(in srgb,var(--ac) 60%,#000));box-shadow:0 0 0 3px var(--sf),0 0 0 4.5px var(--gd)}
+h2{font-size:27px;font-weight:600;margin:28px 0 10px;letter-spacing:.01em}
+h2::after{content:"";display:block;width:34px;height:2px;background:var(--gd);margin-top:8px;border-radius:2px}
+.lgt::after,.lg h2::after{margin-left:auto;margin-right:auto}
+.c{border-radius:16px;padding:18px 20px;margin:12px 0;box-shadow:var(--sh1);border:1px solid var(--ln)}
+.f label{font-size:12px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;color:var(--mu)}
+input,select,textarea{border-radius:12px;background:color-mix(in srgb,var(--bg) 70%,var(--sf));transition:border-color .15s,box-shadow .15s}
+input:focus,select:focus,textarea:focus{outline:0;border-color:var(--ac);box-shadow:0 0 0 3px color-mix(in srgb,var(--ac) 25%,transparent)}
+.btn{border-radius:12px;font-weight:600;letter-spacing:.02em;box-shadow:0 2px 8px color-mix(in srgb,var(--ac) 30%,transparent);transition:transform .12s,filter .15s}
+.btn:active{transform:scale(.98)}.btn:hover{filter:brightness(1.06)}
+.btn.o,.btn.d{box-shadow:none}
+.bd{font-weight:600;font-size:12.5px;letter-spacing:.02em}
+.al{border-radius:14px}
+.tb th{font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;font-weight:700}
+.tb tbody tr:nth-child(even) td{background:color-mix(in srgb,var(--acs) 35%,transparent)}
+.cur{box-shadow:inset 4px 0 0 var(--gd),var(--sh1);border-color:var(--ln)}
+.ck{border-radius:9px}.pg{height:10px}
+nav{background:color-mix(in srgb,var(--sf) 92%,transparent);backdrop-filter:blur(10px);border-top:1px solid var(--ln);box-shadow:0 -6px 20px rgba(12,61,54,.06)}
+nav a{font-size:12.5px;letter-spacing:.02em;border-top:0;position:relative}
+nav a.on{background:none;color:var(--ac)}
+nav a.on::after{content:"";position:absolute;left:25%;right:25%;top:0;height:3px;border-radius:0 0 3px 3px;background:var(--gd)}
+.eb{background:linear-gradient(90deg,var(--ambbg),color-mix(in srgb,var(--ambbg) 70%,var(--sf)));border-bottom:1px solid color-mix(in srgb,var(--amb) 40%,transparent)}
+.md{border:1px solid color-mix(in srgb,var(--ac) 25%,transparent);border-radius:14px;letter-spacing:.01em}
+.lg{margin-top:-52px}.lg .c{box-shadow:var(--sh2)}
+.lgt{font-size:32px;font-weight:600;letter-spacing:.01em}
+.lgs{margin-bottom:14px}
+.mc{border-radius:18px;box-shadow:var(--sh1);padding:18px 18px;gap:16px;border:1px solid var(--ln);transition:border-color .15s,box-shadow .15s,transform .12s}
+.mc:hover{border-color:var(--gd);box-shadow:var(--sh2)}
+.mc .ic{width:58px;height:58px;border-radius:50%;background:linear-gradient(145deg,var(--acs),color-mix(in srgb,var(--acs) 60%,var(--ac)));border:1px solid color-mix(in srgb,var(--ac) 25%,transparent)}
+.mc.n .ic{background:linear-gradient(145deg,var(--ambbg),color-mix(in srgb,var(--ambbg) 60%,var(--amb)));border-color:color-mix(in srgb,var(--amb) 30%,transparent)}
+.mc b{font-size:16.5px;letter-spacing:.01em}
+.mc .ar{color:var(--gd);font-size:26px}
+.ft{letter-spacing:.04em}
+@media(min-width:700px){.w{max-width:680px}.lg{max-width:460px}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<script>
+const KEY="sicantik-v1";
+const TODAY=new Date();
+const DEF={
+ p:{nama:"Tn. Budi Santoso",usia:"58",jk:"Laki-laki",reg:"00-12-34-56",rm:"RM-884213",kamar:"Melati 302",kelas:"Kelas 2",bed:"Bed 2",tlp:"0812-3456-7890",pj:"Ibu Sari (istri)",tgl:"1968-05-14"},
+ dpjp:"dr. Andini Pratama, Sp.PD",konsulan:"dr. Raka Wijaya, Sp.JP (Jantung)\ndr. Lina Hartono, Sp.GK (Gizi Klinik)",
+ perawat:{pagi:"NS. Siti, S.Kep",sore:"NS. Dewi, S.Kep",malam:"NS. Agus, S.Kep"},
+ alergi:"Paracetamol, seafood",nurse:"NS. Siti, S.Kep",
+ tindakan:[{n:"Darah lengkap",w:"06.00",s:"Selesai"},{n:"Rontgen thorax",w:"10.00",s:"Menunggu"},{n:"Hemodialisis",w:"13.00",s:"Dalam Proses"}],
+ diet:[{n:"Diet Diabetes Mellitus (DM) 1700 kkal",on:true,e:"Membantu menstabilkan kadar gula darah dengan membatasi karbohidrat sederhana dan memperbanyak serat. Mohon tidak membawa makanan atau minuman manis dari luar rumah sakit."},{n:"Diet rendah garam",on:false,e:"Membantu mengendalikan tekanan darah dan penumpukan cairan."},{n:"Puasa",on:false,e:"Dilakukan sebelum tindakan atau pemeriksaan tertentu. Perawat akan memberi tahu jamnya."},{n:"Makanan lunak saring (MSS)",on:false,e:"Makanan halus agar mudah ditelan dan dicerna."}],
+ dietCat:"Pantangan: seafood. Tanyakan ke ahli gizi sebelum membawa makanan dari rumah.",
+ edu:[{n:"Cuci tangan 8 langkah & etika batuk",e:"Cuci tangan dengan sabun atau handrub sebelum dan sesudah menyentuh pasien.",done:true,by:"NS. Siti, S.Kep",tgl:"2026-11-03"},{n:"Manajemen nyeri",e:"Menilai skala nyeri (1–10) dan teknik napas dalam. Jangan ragu memanggil perawat jika nyeri bertambah.",done:true,by:"NS. Siti, S.Kep",tgl:"2026-11-03"},{n:"Pencegahan risiko jatuh",e:"Pasang pagar pengaman tempat tidur, gunakan alas kaki anti-slip, dan minta bantuan keluarga saat pasien turun dari tempat tidur.",done:true,by:"NS. Siti, S.Kep",tgl:"2026-11-03"},{n:"Informasi obat (indikasi & efek samping)",e:"Kenali nama, fungsi, dan efek samping obat yang diberikan.",done:false},{n:"Pemberian nutrisi & batasan cairan",e:"Jumlah minum harian disesuaikan kondisi pasien.",done:false},{n:"Tata tertib rumah sakit, hak & kewajiban pasien",e:"Jam kunjung, jumlah penunggu, dan hak pasien.",done:false},{n:"Prosedur administrasi & pembiayaan",e:"Alur pembayaran dan berkas yang perlu disiapkan.",done:false},{n:"Perawatan alat medis terpasang (infus, NGT, dll.)",e:"Jaga alat tetap bersih dan tidak tertarik.",done:false},{n:"Mobilisasi bertahap di tempat tidur",e:"Miring kanan-kiri dan duduk bertahap sesuai arahan perawat.",done:false}],
+ pulang:{tgl:"2026-11-05",siap:[{n:"Kondisi klinis & tanda vital stabil",done:false},{n:"Obat pulang & resep lanjutan",done:false},{n:"Edukasi perawatan mandiri di rumah",done:false},{n:"Jadwal kontrol ulang poli spesialis",done:false},{n:"Surat kontrol, surat izin pulang, resume medis",done:false}]}
+};
+let ALL=load(),S=ALL.pts[0],cur=S.id,myId=cur,myPin="",auth=false,edit=false,loginErr="",pinOpen=false,nLogin=false,rstAsk=false,nurseSess=false;
+{const[i,p]=String(ss()||"").split("|"),q=ALL.pts.find(x=>x.id===+i);if(q&&p&&q.pin===p){cur=myId=q.id;myPin=p;auth=true;sync()}else ss(false)}
+function load(){try{const r=localStorage.getItem(KEY);if(r)return norm(JSON.parse(r))}catch(e){}return norm(null)}
+function norm(d){if(d&&d.pts&&d.pts.length){d.pin=d.pin||null;d.pts.forEach(x=>{x.pin=x.pin||genPin(d.pts)});return d}const f=!(d&&d.p),o=f?JSON.parse(JSON.stringify(DEF)):d,r={nurse:o.nurse||"",pin:null,pts:[Object.assign({id:1,status:"dirawat"},o)]};if(f)r.pts.push(demo(2,"Ny. Ratna Dewi","64","00-12-34-57","Melati 305","dr. Andini Pratama, Sp.PD","dirawat"),demo(3,"Tn. Hadi Wibowo","71","00-12-34-58","Anggrek 201","dr. Raka Wijaya, Sp.JP","dirawat"),demo(4,"Ny. Lestari","55","00-12-34-59","Mawar 110","dr. Andini Pratama, Sp.PD","pulang"));r.pts.forEach(x=>{x.pin=x.pin||genPin(r.pts)});return r}
+function sync(){if(auth&&!edit&&!nurseSess){const q=ALL.pts.find(x=>x.id===myId);if(!q||q.pin!==myPin){auth=false;ss(false);cur=ALL.pts[0].id}}const f=ALL.pts.find(x=>x.id===cur);if(!f&&!edit&&auth){auth=false;ss(false)}S=f||ALL.pts[0];cur=S.id;if(!ALL.pts.some(x=>x.id===myId))myId=cur}
+function genPin(l){let p;do{p=String(Math.floor(100000+Math.random()*900000))}while(l.some(x=>x.pin===p));return p}
+function blank(id){const d=JSON.parse(JSON.stringify(DEF));d.id=id;d.status="dirawat";d.p={nama:"Pasien baru",usia:"",jk:"",reg:"",rm:"",kamar:"",kelas:"",bed:"",tlp:"",pj:"",tgl:""};d.dpjp="";d.konsulan="";d.perawat={pagi:"",sore:"",malam:""};d.alergi="Tidak ada";d.tindakan=[];d.diet.forEach(x=>x.on=false);d.edu.forEach(x=>{x.done=false;delete x.by;delete x.tgl});d.pulang.tgl="";d.pulang.siap.forEach(x=>x.done=false);d.dietCat="";return d}
+function demo(id,nama,usia,reg,kamar,dpjp,st){const d=blank(id);Object.assign(d.p,{nama,usia,reg,kamar,bed:"Bed 1",kelas:"Kelas 2"});d.dpjp=dpjp;d.status=st;d.pulang.tgl="2026-11-06";return d}
+let dbDoc=null,dbT,syncSt="cek";
+function dbPush(){if(!dbDoc||!edit)return;clearTimeout(dbT);dbT=setTimeout(()=>{dbDoc.set({json:JSON.stringify(ALL)}).catch(()=>{})},500)}
+function save(){ALL.rev=Date.now();try{localStorage.setItem(KEY,JSON.stringify(ALL))}catch(e){}dbPush()}
+function ss(v){try{if(v===undefined)return sessionStorage.getItem("sc-auth");v?sessionStorage.setItem("sc-auth",String(v)):sessionStorage.removeItem("sc-auth")}catch(e){}}
+const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const V=p=>p.split(".").reduce((o,k)=>o?.[k],S);
+function setP(p,v){const k=p.split(".");let o=p==="nurse"?ALL:S;for(let i=0;i<k.length-1;i++)o=o[k[i]];o[k[k.length-1]]=v;save()}
+const fmt=d=>{if(!d)return"–";const x=new Date(d+"T00:00:00");return isNaN(x)?d:x.toLocaleDateString("id-ID",{day:"numeric",month:"long",year:"numeric"})};
+const isoToday=()=>TODAY.toISOString().slice(0,10);
+function fld(p,l,t="text",multi){const v=V(p);if(edit)return `<div class="f"><label>${l}</label>${multi?`<textarea data-p="${p}">${esc(v)}</textarea>`:`<input type="${t}" data-p="${p}" value="${esc(v)}">`}</div>`;
+ return `<div class="f"><label>${l}</label><div class="v">${t==="date"?fmt(v):esc(v).replace(/\n/g,"<br>")||"–"}</div></div>`}
+const ck=(p,on)=>`<button class="ck ${on?"on":""} ${edit?"ed":""}" ${edit?`data-t="${p}"`:"disabled"} aria-label="${on?"Selesai":"Belum"}" aria-pressed="${!!on}">${on?"✓":""}</button>`;
+const del=(a,i)=>edit?`<button class="btn d" data-d="${a}:${i}">Hapus</button>`:"";
+const add=(a,l)=>edit?`<button class="btn o" data-a="${a}" style="width:100%;margin-top:6px">${l}</button>`:"";
+function effTheme(){return document.documentElement.dataset.theme||(matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light")}
+function applyTheme(t){document.documentElement.dataset.theme=t;try{localStorage.setItem("sc-theme",t)}catch(e){}}
+try{const t0=localStorage.getItem("sc-theme");if(t0)document.documentElement.dataset.theme=t0}catch(e){}
+const TABS=[["ringkasan","Ringkasan"],["tim","Tim"],["tindakan","Tindakan"],["diet","Diet"],["edukasi","Edukasi"],["pulang","Pulang"]];
+const tabs=()=>edit?[["daftar","Pasien"],...TABS]:TABS;
+const tab=()=>{const h=location.hash.slice(1);return tabs().some(t=>t[0]===h)?h:(edit?"daftar":"ringkasan")};
+
+function patientCard(){const p=S.p;return `<div class="pc"><div class="av" aria-hidden="true">${esc(p.nama.replace(/^(Tn|Ny|An|Nn|By)\.?\s*/i,"").charAt(0).toUpperCase())}</div><div class="pi"><b>${esc(p.nama)}</b> <span style="color:var(--mu)">${esc(p.usia)} th</span><div class="r"><span>Reg ${esc(p.reg)}</span><span>${esc(p.kamar)}, ${esc(p.bed)}</span><span>DPJP ${esc(S.dpjp)}</span></div></div></div>
+<div class="al ${S.alergi.trim()&&!/^tidak/i.test(S.alergi)?"y":"n"}"><span aria-hidden="true">${S.alergi.trim()&&!/^tidak/i.test(S.alergi)?"⚠":"✓"}</span><span>${S.alergi.trim()&&!/^tidak/i.test(S.alergi)?"Alergi: "+esc(S.alergi):"Tidak ada alergi"}</span></div>`}
+
+let pinMsg="";
+let lm="";
+function lockLeft(){try{return Math.max(0,Math.ceil((+localStorage.getItem("sc-lock")-Date.now())/1000))}catch(e){return 0}}
+function fail(){try{const n=(+localStorage.getItem("sc-fail")||0)+1;localStorage.setItem("sc-fail",n);if(n>=5){localStorage.setItem("sc-lock",Date.now()+60000);localStorage.setItem("sc-fail",0)}}catch(e){}}
+function okTry(){try{localStorage.setItem("sc-fail",0)}catch(e){}}
+let showHow=false,instDone=false,dip=null;
+const IOS=/iphone|ipad|ipod/i.test(navigator.userAgent)||(navigator.platform==="MacIntel"&&navigator.maxTouchPoints>1);
+const STAND=matchMedia("(display-mode: standalone)").matches||navigator.standalone===true;
+addEventListener("beforeinstallprompt",e=>{e.preventDefault();dip=e;if(!auth)render()});
+addEventListener("appinstalled",()=>{instDone=true;dip=null;if(!auth)render()});
+(function(){try{const c=document.createElement("canvas");c.width=c.height=512;const x=c.getContext("2d");x.fillStyle="#0c3d36";x.fillRect(0,0,512,512);x.fillStyle="#eaf6f2";x.font="700 230px Georgia,serif";x.textAlign="center";x.textBaseline="middle";x.fillText("SC",256,276);const u=c.toDataURL("image/png");if(!document.querySelector("link[rel=apple-touch-icon]")){const l=document.createElement("link");l.rel="apple-touch-icon";l.href=u;document.head.appendChild(l)}if(!document.querySelector("link[rel=manifest]")){const m=document.createElement("link");m.rel="manifest";m.href=URL.createObjectURL(new Blob([JSON.stringify({name:"SI CANTIK",short_name:"SI CANTIK",display:"standalone",start_url:location.href,background_color:"#0c3d36",theme_color:"#0c3d36",icons:[{src:u,sizes:"512x512",type:"image/png"}]})],{type:"application/manifest+json"}));document.head.appendChild(m)}}catch(e){}})();
+function installUI(){if(STAND||instDone)return"";
+ const st=IOS?`<li>Buka halaman ini di <b>Safari</b>.</li><li>Ketuk tombol <b>Bagikan</b> (kotak dengan panah ke atas).</li><li>Pilih <b>Tambahkan ke Layar Utama</b>, lalu ketuk <b>Tambah</b>.</li>`:`<li>Buka halaman ini di <b>Chrome</b>.</li><li>Ketuk menu <b>⋮</b> di pojok kanan atas.</li><li>Pilih <b>Instal aplikasi</b> atau <b>Tambahkan ke layar utama</b>.</li>`;
+ return `<div class="c"><b>Pasang di HP</b><p class="ex" style="margin:4px 0 12px">Buka SI CANTIK langsung dari layar utama, seperti aplikasi biasa, tanpa mengetik tautan.</p><button class="btn" id="inst" style="width:100%">${dip?"Pasang aplikasi":showHow?"Tutup petunjuk":"Cara memasang aplikasi"}</button>${showHow&&!dip?`<ol style="padding-left:20px;margin:12px 0 0;line-height:1.7">${st}</ol><p class="ex">Jika tautan dibuka dari WhatsApp atau aplikasi lain, buka dulu di ${IOS?"Safari":"Chrome"}.</p>`:""}</div>`}
+const ICO=`<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-3px"><path d="M3 6h18M8 6V4h8v2M6 6l1 14h10l1-14M10 11v6M14 11v6"/></svg>`;
+function vDaftar(){const a=ALL.pts.filter(x=>x.status==="dirawat"),b=ALL.pts.filter(x=>x.status!=="dirawat");
+ const row=x=>`<div class="c"><b>${esc(x.p.nama)}</b> <span class="ex">${esc(x.p.usia)}${x.p.usia?" th":""}</span><div class="ex">${esc(x.p.kamar)||"Kamar –"}${x.p.bed?", "+esc(x.p.bed):""} · DPJP ${esc(x.dpjp)||"–"}</div><div class="ex">PIN keluarga: <b>${esc(x.pin)}</b> <button class="btn d" data-g="${x.id}" style="margin-left:6px">Ganti PIN</button></div><div style="margin-top:8px;display:flex;flex-wrap:wrap;gap:6px">${x.alergi.trim()&&!/^tidak/i.test(x.alergi)?`<span class="bd" style="background:var(--redbg);color:var(--red)">Alergi: ${esc(x.alergi)}</span>`:""}<span class="bd p1">Edukasi ${x.edu.filter(q=>q.done).length}/${x.edu.length}</span><span class="bd p1">Tindakan ${x.tindakan.filter(q=>q.s==="Selesai").length}/${x.tindakan.length}</span>${x.pulang.tgl?`<span class="bd w1">Pulang ${fmt(x.pulang.tgl)}</span>`:""}</div><div style="display:flex;gap:8px;margin-top:12px"><button class="btn" data-o="${x.id}" style="flex:1">Buka</button><button class="btn o" data-s="${x.id}" style="flex:1">${x.status==="dirawat"?"Tandai pulang":"Rawat kembali"}</button></div></div>`;
+ return `<div class="pc" style="display:block"><b>Rekapitulasi pasien</b><div class="r"><span>Sedang dirawat: ${a.length}</span><span>Sudah pulang: ${b.length}</span><span>${syncSt==="ok"?"Tersinkron":"Mode lokal (tidak tersinkron)"}</span></div></div>
+<h2>Pasien sedang dirawat</h2><div class="c scr"><table class="tb"><thead><tr><th>No</th><th>Nama</th><th>Kamar</th><th>DPJP</th></tr></thead><tbody>${a.map((x,i)=>`<tr><td>${i+1}</td><td><b>${esc(x.p.nama)}</b></td><td>${esc(x.p.kamar)} ${esc(x.p.bed)}</td><td>${esc(x.dpjp)}</td></tr>`).join("")||`<tr><td colspan="4" class="ex">Tidak ada pasien dirawat.</td></tr>`}</tbody></table></div>
+<button class="btn" id="np" style="width:100%">+ Pasien baru</button>
+<h2>Detail pasien</h2>${a.map(row).join("")}
+<div style="display:flex;justify-content:space-between;align-items:center"><h2>Sudah pulang</h2><button class="btn d" id="rst" aria-label="Hapus data pasien yang sudah pulang" title="Hapus data pasien yang sudah pulang" ${b.length?"":"disabled"}>${ICO} Reset</button></div>
+${rstAsk?`<div class="al y" style="flex-direction:column;align-items:stretch"><span>Hapus data ${b.length} pasien yang sudah pulang? Pasien yang masih dirawat tidak ikut terhapus. Tindakan ini tidak bisa dibatalkan.</span><div style="display:flex;gap:8px"><button class="btn" id="rstY" style="flex:1;background:var(--red);border-color:var(--red)">Ya, hapus</button><button class="btn o" id="rstN" style="flex:1">Batal</button></div></div>`:""}
+${b.map(row).join("")||`<div class="c ex">Belum ada pasien yang pulang.</div>`}
+<h2>Pengaturan</h2><div class="c"><div class="f"><label for="npn">Ganti PIN perawat (4–8 angka)</label><input id="npn" type="password" inputmode="numeric" autocomplete="off"></div><button class="btn" id="spin">Simpan PIN baru</button><p class="ex" role="status" style="margin:8px 0 0">${esc(pinMsg)}</p></div>`}
+function feed(){const run=S.tindakan.filter(x=>x.s==="Dalam Proses"),wait=S.tindakan.filter(x=>x.s==="Menunggu"),dn=S.tindakan.filter(x=>x.s==="Selesai"),eu=S.edu.filter(x=>x.done);
+ const li=(a,f)=>a.length?`<ul class="fl">${a.map(f).join("")}</ul>`:`<div class="ex">Belum ada.</div>`;
+ return `<h2>Perkembangan perawatan</h2><div class="c"><p style="margin:0 0 12px">Tim kami terus memantau kondisi pasien. Berikut yang sedang dan sudah dikerjakan hari ini.</p>
+<div class="f"><label>Sedang dikerjakan</label>${li(run,x=>`<li><span class="bd p1">Sedang</span> ${esc(x.n)}, jam ${esc(x.w)}</li>`)}</div>
+<div class="f"><label>Akan dilakukan</label>${li(wait,x=>`<li><span class="bd w1">Menunggu</span> ${esc(x.n)}, jam ${esc(x.w)}</li>`)}</div>
+<div class="f"><label>Sudah dikerjakan</label>${li([...dn.map(x=>["Selesai",x.n+", jam "+x.w]),...eu.map(x=>["Edukasi",x.n])],x=>`<li><span class="bd s1">${x[0]}</span> ${esc(x[1])}</li>`)}</div></div>`}
+function vRingkasan(){const e=S.edu.filter(x=>x.done).length,t=S.tindakan.filter(x=>x.s==="Selesai").length;
+ return `${feed()}<h2>Identitas pasien</h2><div class="c">${fld("p.nama","Nama pasien")}${fld("p.usia","Usia (tahun)")}${fld("p.jk","Jenis kelamin")}${fld("p.tgl","Tanggal lahir","date")}${fld("p.reg","No. Register")}${fld("p.rm","No. Rekam Medis")}${fld("p.kamar","Kamar")}${fld("p.kelas","Kelas")}${fld("p.bed","Bed")}${fld("p.pj","Penanggung jawab")}${fld("p.tlp","Telepon keluarga","tel")}</div>
+ <h2>Informasi keselamatan</h2><div class="c">${fld("alergi","Riwayat alergi (kosongkan atau tulis “Tidak ada” bila tidak ada)")}</div>
+ <h2>Hari ini</h2><div class="c"><div class="f"><label>Pemeriksaan & tindakan selesai</label><div class="v">${t} dari ${S.tindakan.length}</div></div><div class="f"><label>Edukasi diberikan</label><div class="v">${e} dari ${S.edu.length}</div></div><div class="f"><label>Estimasi pulang</label><div class="v">${fmt(S.pulang.tgl)}</div></div></div>`}
+
+function shiftNow(){const h=TODAY.getHours();return h>=7&&h<14?"pagi":h>=14&&h<21?"sore":"malam"}
+function vTim(){const n=shiftNow();return `<h2>Tim medis</h2><div class="c">${fld("dpjp","DPJP (Dokter Penanggung Jawab Pelayanan)")}${fld("konsulan","Dokter konsulan","text",true)}</div>
+ <h2>Perawat hari ini</h2>${[["pagi","Pagi (07.00–14.00)"],["sore","Sore (14.00–21.00)"],["malam","Malam (21.00–07.00)"]].map(([k,l])=>`<div class="c ${k===n&&!edit?"cur":""}">${fld("perawat."+k,l)}${k===n&&!edit?`<span class="bd p1">Bertugas sekarang</span>`:""}</div>`).join("")}`}
+
+function vTindakan(){const row=(x,i)=>`<div class="c"><div class="it"><div>${edit?fld(`tindakan.${i}.n`,"Pemeriksaan / tindakan")+fld(`tindakan.${i}.w`,"Jam")+`<div class="f"><label>Status</label><select data-p="tindakan.${i}.s">${["Menunggu","Dalam Proses","Selesai"].map(s=>`<option ${s===x.s?"selected":""}>${s}</option>`).join("")}</select></div>`:`<b>${esc(x.n)}</b><div class="ex">Jam ${esc(x.w)}</div>`}</div>${edit?"":`<span class="bd ${x.s==="Selesai"?"s1":x.s==="Menunggu"?"w1":"p1"}">${x.s}</span>`}</div>${del("tindakan",i)}</div>`;
+ const ls=S.tindakan.map((x,i)=>[x,i]);const a=ls.filter(([x])=>x.s!=="Selesai"),b=ls.filter(([x])=>x.s==="Selesai");
+ return `<h2>Dijadwalkan & berjalan</h2>${a.map(([x,i])=>row(x,i)).join("")||`<div class="c ex">Tidak ada jadwal saat ini.</div>`}<h2>Selesai</h2>${b.map(([x,i])=>row(x,i)).join("")||`<div class="c ex">Belum ada yang selesai.</div>`}${add("tindakan","+ Tambah pemeriksaan / tindakan")}`}
+
+function vDiet(){const l=S.diet.map((x,i)=>[x,i]).filter(([x])=>edit||x.on);
+ return `<h2>Diet pasien</h2>${l.map(([x,i])=>`<div class="c"><div class="it">${ck(`diet.${i}.on`,x.on)}<div>${edit?fld(`diet.${i}.n`,"Jenis diet")+fld(`diet.${i}.e`,"Penjelasan untuk keluarga","text",true):`<b>${esc(x.n)}</b><div class="ex">${esc(x.e)}</div>`}${del("diet",i)}</div></div></div>`).join("")||`<div class="c ex">Belum ada diet aktif. Tanyakan ke perawat.</div>`}${add("diet","+ Tambah jenis diet")}<h2>Catatan ahli gizi</h2><div class="c">${fld("dietCat","Catatan tambahan","text",true)}</div>`}
+
+function vEdu(){const d=S.edu.filter(x=>x.done).length,pc=S.edu.length?Math.round(d/S.edu.length*100):0;
+ return `<h2>Edukasi pasien & keluarga</h2><div class="c"><b>${d} dari ${S.edu.length} materi sudah diberikan</b><div class="pg" role="progressbar" aria-valuenow="${pc}" aria-valuemin="0" aria-valuemax="100"><i style="width:${pc}%"></i></div></div>
+ ${S.edu.map((x,i)=>`<div class="c"><div class="it">${ck(`edu.${i}.done`,x.done)}<div>${edit?fld(`edu.${i}.n`,"Materi")+fld(`edu.${i}.e`,"Penjelasan","text",true):`<b>${esc(x.n)}</b><div class="ex">${esc(x.e)}</div>`}${x.done?`<div class="mt">Diedukasi oleh ${esc(x.by)}, ${fmt(x.tgl)}</div>`:`<div class="ex">Belum diedukasi</div>`}${del("edu",i)}</div></div></div>`).join("")}${add("edu","+ Tambah materi edukasi")}`}
+
+function vPulang(){const d=Math.round((new Date(S.pulang.tgl+"T00:00:00")-new Date(isoToday()+"T00:00:00"))/864e5);
+ return `<h2>Rencana kepulangan</h2><div class="c">${fld("pulang.tgl","Estimasi tanggal pulang","date")}${!edit&&!isNaN(d)?`<span class="bd p1">${d>0?d+" hari lagi":d===0?"Hari ini":"Tanggal sudah lewat"}</span>`:""}</div>
+ <h2>Persiapan pulang</h2>${S.pulang.siap.map((x,i)=>`<div class="c"><div class="it">${ck(`pulang.siap.${i}.done`,x.done)}<div>${edit?fld(`pulang.siap.${i}.n`,"Persiapan"):`<b>${esc(x.n)}</b>`}${del("pulang.siap",i)}</div></div></div>`).join("")}${add("pulang.siap","+ Tambah persiapan")}`}
+
+function render(){const app=document.getElementById("app");
+ if(!auth){app.innerHTML=`<header><div class="w"><div><div class="rs">RSUD RT. NOTOPURO SIDOARJO</div><h1>SI CANTIK</h1><p>(Sistem Informasi - Cermat Akurat Transparan Informatif Komunikatif)</p></div><button class="gbtn" id="thm">${effTheme()==="dark"?"Mode terang":"Mode gelap"}</button></div></header>
+ <div class="lg">${lm===""?`<h2 class="lgt">Pilih mode masuk</h2><p class="lgs">Ketuk salah satu untuk melanjutkan</p>
+<button class="mc" data-m="pasien"><span class="ic"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-4.6-9.3-9A5.3 5.3 0 0 1 12 6a5.3 5.3 0 0 1 9.3 6c-2.3 4.4-9.3 9-9.3 9z"/></svg></span><span><b>Mode Pasien &amp; Keluarga</b><span>Lihat perkembangan perawatan dengan PIN dari perawat. Hanya untuk dilihat.</span></span><span class="ar" aria-hidden="true">›</span></button>
+<button class="mc n" data-m="perawat"><span class="ic"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="4" width="12" height="17" rx="2"/><path d="M9 4h6v3H9zM9 12h6M9 16h4"/></svg></span><span><b>Mode Perawat</b><span>Kelola pasien, ubah data, dan berikan PIN ke keluarga.</span></span><span class="ar" aria-hidden="true">›</span></button>`:lm==="pasien"?`<div class="c"><button class="bk" id="bk">‹ Kembali ke pilihan mode</button><h2 style="margin-top:0">Mode Pasien &amp; Keluarga</h2><p class="ex">Masukkan PIN yang diberikan perawat. Tanpa PIN, data pasien tidak dapat dibuka.</p>
+ <div class="f"><label for="lr">PIN pasien</label><input id="lr" autocomplete="off" inputmode="numeric" placeholder="6 angka dari perawat"></div>
+ <div class="er" role="alert">${esc(loginErr)}</div><button class="btn" id="lgo" style="width:100%">Masuk</button></div>`:`<div class="c"><button class="bk" id="bk">‹ Kembali ke pilihan mode</button><h2 style="margin-top:0">Mode Perawat</h2><p class="ex">${(!!ALL.pin)?"Masukkan PIN perawat untuk mengelola data pasien.":"Belum ada PIN perawat. Buat PIN baru (4–8 angka)."}</p>
+ <div class="f"><label for="npin">${(!!ALL.pin)?"PIN perawat":"Buat PIN perawat (4–8 angka)"}</label><input id="npin" type="password" inputmode="numeric" autocomplete="off"></div>
+ <div class="er" role="alert">${esc(loginErr)}</div><button class="btn" id="ngo" style="width:100%">${(!!ALL.pin)?"Buka mode perawat":"Simpan PIN & buka mode perawat"}</button></div>`}
+ <p class="ex" role="status" style="margin:14px 0 0;text-align:center">${syncSt==="ok"?"Data tersinkron dengan perangkat lain.":syncSt==="off"?"Mode lokal: data tidak tersinkron dengan perangkat lain, sehingga PIN yang dibuat perawat di perangkat lain tidak dikenali di sini.":"Menghubungkan ke data bersama…"}</p>${installUI()}<div hidden></div></div>`;return}
+ const t=tab(),views={daftar:vDaftar,ringkasan:vRingkasan,tim:vTim,tindakan:vTindakan,diet:vDiet,edukasi:vEdu,pulang:vPulang};
+ app.innerHTML=(edit?`<div class="eb"><div class="w"><span>Mode perawat</span><input data-p="nurse" value="${esc(ALL.nurse)}" aria-label="Nama perawat yang mengedukasi" style="flex:1"><button class="btn o" id="xit" style="min-height:36px;padding:4px 12px">Pilih mode</button></div></div>`:"")+
+ `<header><div class="w"><div><div class="rs">RSUD RT. NOTOPURO SIDOARJO</div><h1>SI CANTIK</h1><p>(Sistem Informasi - Cermat Akurat Transparan Informatif Komunikatif)</p><span class="chip">${edit?"Mode Perawat":"Mode Pasien"}</span></div><div style="display:flex;flex-direction:column;gap:6px"><button class="gbtn" id="thm">${effTheme()==="dark"?"Mode terang":"Mode gelap"}</button><button class="gbtn" id="out">Keluar</button></div></div></header>
+ <div class="w">${t==="daftar"?"":patientCard()}${edit?"":`<div class="md">Mode pasien / keluarga: hanya untuk dilihat</div>`}
+ <main>${views[t]()}</main><p class="ft">Informasi ini bersifat pribadi. Tanyakan ke perawat jika ada yang belum jelas.</p></div>
+ <nav><div class="w">${tabs().map(([k,l])=>`<a href="#${k}" class="${k===t?"on":""}">${l}</a>`).join("")}</div></nav>`}
+
+document.addEventListener("click",e=>{const g=id=>e.target.closest("#"+id);
+ if(!edit&&e.target.closest("[data-t],[data-a],[data-d],[data-s],[data-g],[data-o],#np,#rst,#rstY,#spin,#xit"))return;
+ if(g("thm")){applyTheme(effTheme()==="dark"?"light":"dark");render();return}
+ if(g("inst")){if(dip){dip.prompt();dip.userChoice.finally(()=>{dip=null;render()})}else{showHow=!showHow;render()}return}
+ if(g("nl")){nLogin=!nLogin;render();return}
+ const mb=e.target.closest("[data-m]");if(mb){lm=mb.dataset.m;loginErr="";render();return}
+ if(g("bk")){lm="";loginErr="";render();return}
+ if(g("ngo")){if(auth&&!nurseSess)return;const L=lockLeft(),nv=document.getElementById("npin").value.trim();if(L){loginErr="Terlalu banyak percobaan. Coba lagi "+L+" detik.";render();return}
+ if(!ALL.pin){if(/^\d{4,8}$/.test(nv)){ALL.pin=nv;save()}else{loginErr="PIN harus 4–8 angka.";render();return}}
+ if(nv===ALL.pin){okTry();const f=ALL.pts.find(x=>x.status==="dirawat")||ALL.pts[0];cur=myId=f.id;sync();auth=true;edit=true;nurseSess=true;nLogin=false;loginErr="";ss(false);location.hash="daftar";render()}else{fail();loginErr="PIN salah.";render()}return}
+  const gb=e.target.closest("[data-g]");if(gb){const x=ALL.pts.find(q=>q.id===+gb.dataset.g);x.pin=genPin(ALL.pts);save();render();return}
+ if(g("spin")){const v=document.getElementById("npn").value.trim();if(/^\d{4,8}$/.test(v)){ALL.pin=v;pinMsg="PIN perawat berhasil diganti.";save()}else pinMsg="PIN harus 4–8 angka.";render();return}
+ const ob=e.target.closest("[data-o]");if(ob){cur=+ob.dataset.o;sync();location.hash="ringkasan";render();return}
+ const sb=e.target.closest("[data-s]");if(sb){const x=ALL.pts.find(q=>q.id===+sb.dataset.s);x.status=x.status==="dirawat"?"pulang":"dirawat";save();render();return}
+ if(g("np")){const id=Math.max(...ALL.pts.map(x=>x.id))+1;const nb=blank(id);nb.pin=genPin(ALL.pts);ALL.pts.push(nb);cur=id;sync();save();location.hash="ringkasan";render();return}
+ if(g("rst")){rstAsk=true;render();return}
+ if(g("rstN")){rstAsk=false;render();return}
+ if(g("rstY")){ALL.pts=ALL.pts.filter(x=>x.status==="dirawat");if(!ALL.pts.length){const b=blank(1);b.pin=genPin([]);ALL.pts.push(b)}if(!ALL.pts.some(x=>x.id===cur))cur=ALL.pts[0].id;sync();rstAsk=false;save();render();return}
+ if(g("lgo")){const L=lockLeft();if(L){loginErr="Terlalu banyak percobaan. Coba lagi "+L+" detik.";render();return}const n=x=>x.replace(/\D/g,""),r=n(document.getElementById("lr").value);const pt=ALL.pts.find(x=>r&&r===x.pin);if(pt){okTry();cur=myId=pt.id;myPin=pt.pin;auth=true;sync();ss(pt.id+"|"+pt.pin);loginErr=""}else{fail();loginErr=(syncSt==="ok"?"PIN tidak cocok. Periksa angkanya atau tanyakan ke perawat.":"PIN tidak dikenali di perangkat ini karena data belum tersinkron dari perangkat perawat. Lihat keterangan di bawah.")}render();return}
+ if(g("out")){lm="";auth=false;ss(false);edit=false;pinOpen=false;nurseSess=false;rstAsk=false;nLogin=false;render();return}
+   if(g("xit")){edit=false;rstAsk=false;if(nurseSess){lm="";nurseSess=false;auth=false;ss(false)}else{cur=myId;sync()}render();return}
+ const t=e.target.closest("[data-t]");if(t){const p=t.dataset.t,v=!V(p);setP(p,v);if(p.startsWith("edu.")){const k=p.split(".");const it=S.edu[k[1]];if(v){it.by=ALL.nurse;it.tgl=isoToday()}else{delete it.by;delete it.tgl}save()}render();return}
+ const a=e.target.closest("[data-a]");if(a){const k=a.dataset.a;if(k==="tindakan")S.tindakan.push({n:"Pemeriksaan baru",w:"00.00",s:"Menunggu"});if(k==="diet")S.diet.push({n:"Diet baru",on:true,e:"Isi penjelasan untuk keluarga."});if(k==="edu")S.edu.push({n:"Materi baru",e:"Isi penjelasan singkat.",done:false});if(k==="pulang.siap")S.pulang.siap.push({n:"Persiapan baru",done:false});save();render();return}
+ const d=e.target.closest("[data-d]");if(d){const[p,i]=d.dataset.d.split(":");V(p).splice(+i,1);save();render()}});
+document.addEventListener("change",e=>{if(!edit)return;const p=e.target.dataset?.p;if(p){setP(p,e.target.value);if(/\.s$|\.on$|^p\.|^alergi$/.test(p))render()}});
+document.addEventListener("keydown",e=>{if(e.key==="Enter"&&e.target.id==="lr")document.getElementById("lgo").click();if(e.key==="Enter"&&e.target.id==="npin")document.getElementById("ngo").click()});
+window.addEventListener("hashchange",()=>{render();window.scrollTo(0,0)});
+(async()=>{try{const db=await claude.use("db");if(!db){off();return}dbDoc=db.doc("sicantik/main");dbDoc.onSnapshot(s=>{if(syncSt!=="ok"){syncSt="ok";if(!auth&&!/INPUT/.test(document.activeElement.tagName))render()}if(!s.exists||s.metadata.hasPendingWrites)return;try{const n=norm(JSON.parse(s.data().json));if((n.rev||0)<(ALL.rev||0)||JSON.stringify(n)===JSON.stringify(ALL))return;ALL=n;sync();try{localStorage.setItem(KEY,JSON.stringify(ALL))}catch(e){}if(!/INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName))render()}catch(e){}},()=>off())}catch(e){off()}})();
+function off(){syncSt="off";if(!/INPUT/.test(document.activeElement.tagName))render()}
+render();
+</script>
+</body>
+</html>
