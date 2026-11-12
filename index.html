@@ -3,109 +3,147 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Si-Cantik Sinkronisasi</title>
+  <title>Si-Cantik Real-Time</title>
   <style>
-    body { font-family: Arial, sans-serif; padding: 20px; max-width: 500px; margin: auto; background: #f9f9f9; }
-    .card { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin-bottom: 15px; }
-    input, select, button { width: 100%; padding: 10px; margin: 8px 0; box-sizing: border-box; }
-    button { background: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer; }
-    button:hover { background: #0056b3; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; padding: 20px; max-width: 500px; margin: auto; background: #f0f4f8; color: #1e293b; }
+    .card { background: white; padding: 24px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin-bottom: 16px; }
+    h2, h3 { margin-top: 0; color: #0f172a; }
+    input, button { width: 100%; padding: 12px; margin: 8px 0; box-sizing: border-box; border-radius: 8px; font-size: 16px; }
+    input { border: 1px solid #cbd5e1; }
+    button { background: #0284c7; color: white; border: none; font-weight: 600; cursor: pointer; }
+    button:hover { background: #0369a1; }
+    .btn-patient { background: #059669; }
+    .btn-patient:hover { background: #047857; }
+    .btn-back { background: #64748b; margin-top: 16px; }
+    .data-item { border-bottom: 1px solid #e2e8f0; padding: 12px 0; }
+    .data-item:last-child { border-bottom: none; }
+    .badge { display: inline-block; background: #e0f2fe; color: #0369a1; padding: 4px 8px; border-radius: 6px; font-size: 12px; font-weight: bold; }
   </style>
 </head>
 <body>
 
   <div id="app" class="card">
-    <h3>Memuat Aplikasi...</h3>
+    <h3>Memuat Si-Cantik...</h3>
   </div>
 
   <script type="module">
     import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm'
 
-    // Konfigurasi Supabase Anda
     const SUPABASE_URL = 'https://aywevalvqhqewttmhddd.supabase.co'
     const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImF5d2V2YWx2cWhxZXd0dG1oZGRkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTQ0Mjk2MjYsImV4cCI6MjExMDAwNTYyNn0.BYAVnZ1n3F6QPpDOkQanWDRj9NXrYCZef8YaMfayn74'
     const supabase = createClient(SUPABASE_URL, SUPABASE_KEY)
 
     const app = document.getElementById('app')
 
-    async function checkAuth() {
-      const { data: { session } } = await supabase.auth.getSession()
-      if (!session) {
-        renderLogin()
-      } else {
-        checkRole(session.user.id)
-      }
-    }
-
-    function renderLogin() {
+    // Tampilan Awal: Langsung Pilih Peran Tanpa Login
+    function renderHome() {
       app.innerHTML = `
-        <h3>Login Si-Cantik</h3>
-        <input type="email" id="email" placeholder="Email" />
-        <input type="password" id="password" placeholder="Password" />
-        <button id="login-btn">Masuk</button>
-        <p id="error-msg" style="color: red;"></p>
+        <h2>Si-Cantik Monitor</h2>
+        <p style="color:#64748b;">Pilih mode akses langsung tanpa login:</p>
+        <button id="btn-nurse">🩺 Masuk sebagai Perawat (Input Data)</button>
+        <button id="btn-patient" class="btn-patient">👤 Masuk sebagai Pasien (Pantau Hasil)</button>
       `
-      document.getElementById('login-btn').onclick = async () => {
-        const email = document.getElementById('email').value
-        const password = document.getElementById('password').value
-        const { error } = await supabase.auth.signInWithPassword({ email, password })
-        if (error) document.getElementById('error-msg').innerText = error.message
-        else checkAuth()
-      }
+      document.getElementById('btn-nurse').onclick = renderNurseDashboard
+      document.getElementById('btn-patient').onclick = renderPatientDashboard
     }
 
-    async function checkRole(userId) {
-      const { data: profile } = await supabase.from('profiles').select('role').eq('id', userId).single()
-      if (profile?.role === 'nurse') renderNurseDashboard()
-      else renderPatientDashboard(userId)
-    }
-
-    async function renderNurseDashboard() {
+    // Dashboard Perawat
+    function renderNurseDashboard() {
       app.innerHTML = `
-        <h3>Mode Perawat</h3>
-        <p>Masukkan data klinis pasien secara real-time.</p>
-        <input type="text" id="patient-id" placeholder="UUID Pasien" />
-        <input type="text" id="param" placeholder="Parameter (Contoh: Tensi)" />
-        <input type="text" id="val" placeholder="Nilai (Contoh: 120/80)" />
-        <button id="send-btn">Kirim & Sinkronkan</button>
-        <button id="logout-btn" style="background:#dc3545;">Keluar</button>
+        <span class="badge">MODE PERAWAT</span>
+        <h3 style="margin-top:8px;">Input Pemantauan Klinis</h3>
+        <input type="text" id="patient-code" placeholder="Kode / Nama Pasien (Misal: PASIEN01)" value="PASIEN01" />
+        <input type="text" id="param" placeholder="Parameter (Contoh: Tensi / BB / UF)" />
+        <input type="text" id="val" placeholder="Nilai (Contoh: 120/80 mmHg)" />
+        <button id="send-btn">Kirim & Sinkronkan Real-Time</button>
+        <p id="status-msg" style="color: #059669; font-weight: bold;"></p>
+        <button id="back-btn" class="btn-back">← Ganti Mode</button>
       `
+
       document.getElementById('send-btn').onclick = async () => {
-        const patient_id = document.getElementById('patient-id').value
-        const parameter_name = document.getElementById('param').value
-        const value = document.getElementById('val').value
-        const { data: { user } } = await supabase.auth.getUser()
+        const patient_id = document.getElementById('patient-code').value.trim().toUpperCase()
+        const parameter_name = document.getElementById('param').value.trim()
+        const value = document.getElementById('val').value.trim()
+        const statusMsg = document.getElementById('status-msg')
 
-        const { error } = await supabase.from('clinical_data').insert([{ patient_id, nurse_id: user.id, parameter_name, value }])
-        if (error) alert('Gagal: ' + error.message)
-        else alert('Data berhasil disinkronkan ke HP Pasien!')
+        if (!patient_id || !parameter_name || !value) {
+          alert('Mohon lengkapi semua kolom!')
+          return
+        }
+
+        statusMsg.innerText = 'Mengirim...'
+        const { error } = await supabase.from('clinical_data').insert([{ patient_id, parameter_name, value }])
+        
+        if (error) {
+          statusMsg.style.color = '#dc2626'
+          statusMsg.innerText = 'Gagal: ' + error.message
+        } else {
+          statusMsg.style.color = '#059669'
+          statusMsg.innerText = '✅ Berhasil dikirim ke HP Pasien (' + patient_id + ')!'
+          document.getElementById('param').value = ''
+          document.getElementById('val').value = ''
+        }
       }
-      document.getElementById('logout-btn').onclick = async () => { await supabase.auth.signOut(); checkAuth(); }
+
+      document.getElementById('back-btn').onclick = renderHome
     }
 
-    async function renderPatientDashboard(userId) {
+    // Dashboard Pasien
+    function renderPatientDashboard() {
       app.innerHTML = `
-        <h3>Mode Pasien</h3>
-        <p>Data pemantauan Anda (Sinkronisasi Real-Time):</p>
-        <div id="data-list">Memuat...</div>
-        <button id="logout-btn" style="background:#dc3545; margin-top: 20px;">Keluar</button>
+        <span class="badge" style="background:#d1fae5; color:#047857;">MODE PASIEN</span>
+        <h3 style="margin-top:8px;">Hasil Pemantauan Anda</h3>
+        <div style="display:flex; gap:8px;">
+          <input type="text" id="filter-code" value="PASIEN01" placeholder="Masukkan Kode Anda" />
+          <button id="load-btn" style="width:auto; padding:0 16px;" class="btn-patient">Cek</button>
+        </div>
+        <div id="data-list" style="margin-top:16px;">Memuat data...</div>
+        <button id="back-btn" class="btn-back">← Ganti Mode</button>
       `
-      
-      const fetchāk = async () => {
-        const { data } = await supabase.from('clinical_data').select('*').eq('patient_id', userId).order('created_at', { ascending: false })
-        document.getElementById('data-list').innerHTML = data?.length ? data.map(d => `<div style="border-bottom:1px solid #eee; padding:5px 0;"><b>${d.parameter_name}:</b> ${d.value} <br><small>${new Date(d.created_at).toLocaleTimeString()}</small></div>`).join('') : 'Belum ada data.'
+
+      let currentChannel = null
+
+      const loadData = async () => {
+        const code = document.getElementById('filter-code').value.trim().toUpperCase()
+        if (!code) return
+
+        const { data } = await supabase
+          .from('clinical_data')
+          .select('*')
+          .eq('patient_id', code)
+          .order('created_at', { ascending: false })
+
+        const listEl = document.getElementById('data-list')
+        listEl.innerHTML = data?.length 
+          ? data.map(d => `
+              <div class="data-item">
+                <div style="font-size:18px; font-weight:bold; color:#0f172a;">${d.parameter_name}: <span style="color:#0284c7;">${d.value}</span></div>
+                <small style="color:#64748b;">Pukul ${new Date(d.created_at).toLocaleTimeString('id-ID')}</small>
+              </div>
+            `).join('') 
+          : '<p style="color:#64748b;">Belum ada data untuk kode <b>' + code + '</b>.</p>'
+
+        // Sinkronisasi Real-Time otomatis saat perawat menginput data baru
+        if (currentChannel) supabase.removeChannel(currentChannel)
+        currentChannel = supabase
+          .channel('realtime-' + code)
+          .on('postgres_changes', { event: 'INSERT', schema: 'public', table: 'clinical_data', filter: `patient_id=eq.${code}` }, () => {
+            loadData()
+          })
+          .subscribe()
       }
-      fetchāk()
 
-      // Realtime listener untuk HP Pasien
-      supabase.channel('public:clinical_data').on('postgres_changes', { event: 'INSERT', schema: 'public', table: `clinical_data`, filter: `patient_id=eq.${userId}` }, () => {
-        fetchāk()
-      }).subscribe()
+      document.getElementById('load-btn').onclick = loadData
+      document.getElementById('back-btn').onclick = () => {
+        if (currentChannel) supabase.removeChannel(currentChannel)
+        renderHome()
+      }
 
-      document.getElementById('logout-btn').onclick = async () => { await supabase.auth.signOut(); checkAuth(); }
+      // Langsung muat data PASIEN01 saat halaman dibuka
+      loadData()
     }
 
-    checkAuth()
+    renderHome()
   </script>
 </body>
 </html>
