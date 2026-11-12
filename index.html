@@ -122,6 +122,48 @@ nav a.on::after{content:"";position:absolute;left:25%;right:25%;top:0;height:3px
     const SUPABASE_ANON_KEY = 'sb_publishable_... (sb_publishable_3vcttajPl333nCOMtMBB4g_pQwztMBF)';
     const KEY="sicantik-v1";
     const TODAY=new Date();
+    // Fungsi untuk membuka jendela pop-up Sinkronisasi
+function bukaModalSync() {
+  document.getElementById('modalSync').style.display = 'flex';
+  document.getElementById('inputUrl').value = localStorage.getItem('sb_url') || '';
+  document.getElementById('inputKey').value = localStorage.getItem('sb_key') || '';
+  document.getElementById('inputKode').value = localStorage.getItem('sb_kode') || '';
+}
+
+// Fungsi untuk menutup jendela pop-up
+function tutupModalSync() {
+  document.getElementById('modalSync').style.display = 'none';
+}
+
+// Fungsi untuk menyimpan pengaturan ke memori HP
+function simpanPengaturanSync() {
+  const url = document.getElementById('inputUrl').value.trim();
+  const key = document.getElementById('inputKey').value.trim();
+  const kode = document.getElementById('inputKode').value.trim();
+
+  if (!url || !key || !kode) {
+    alert('Mohon isi semua kolom (Project URL, Anon Key, dan Kode Papan)!');
+    return;
+  }
+
+  localStorage.setItem('sb_url', url);
+  localStorage.setItem('sb_key', key);
+  localStorage.setItem('sb_kode', kode);
+
+  alert('Pengaturan berhasil disimpan! Halaman akan dimuat ulang.');
+  location.reload();
+}
+
+// Fungsi untuk mereset atau memutuskan koneksi
+function putusKoneksiSync() {
+  if (confirm('Yakin ingin menghapus pengaturan sinkronisasi di perangkat ini?')) {
+    localStorage.removeItem('sb_url');
+    localStorage.removeItem('sb_key');
+    localStorage.removeItem('sb_kode');
+    alert('Koneksi diputus.');
+    location.reload();
+  }
+}
     const DEF={
  p:{nama:"Tn. Budi Santoso",usia:"58",jk:"Laki-laki",reg:"00-12-34-56",rm:"RM-884213",kamar:"Melati 302",kelas:"Kelas 2",bed:"Bed 2",tlp:"0812-3456-7890",pj:"Ibu Sari (istri)",tgl:"1968-05-14"},
  dpjp:"dr. Andini Pratama, Sp.PD",konsulan:"dr. Raka Wijaya, Sp.JP (Jantung)\ndr. Lina Hartono, Sp.GK (Gizi Klinik)",
@@ -268,5 +310,41 @@ window.addEventListener("hashchange",()=>{render();window.scrollTo(0,0)});
 function off(){syncSt="off";if(!/INPUT/.test(document.activeElement.tagName))render()}
 render();
 </script>
-</body>
+<!-- Tombol untuk membuka menu Sinkronisasi -->
+<button onclick="bukaModalSync()" style="background: #0284c7; color: white; padding: 10px 16px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer;">
+  ☁️ Sinkronisasi Antar HP
+</button>
+
+<!-- Modal / Jendela Popup Sinkronisasi -->
+<div id="modalSync" style="display:none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 9999; justify-content: center; align-items: center;">
+  <div style="background: white; padding: 24px; border-radius: 12px; width: 90%; max-width: 450px; box-shadow: 0 4px 20px rgba(0,0,0,0.2); color: #333;">
+    
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+      <h3 style="margin: 0; font-size: 18px; color: #0f172a;">☁️ Sinkronisasi Antar HP</h3>
+      <button onclick="tutupModalSync()" style="background: none; border: none; font-size: 20px; cursor: pointer; color: #666;">&times;</button>
+    </div>
+
+    <p style="font-size: 13px; color: #64748b; margin-bottom: 16px;">
+      Perawat, dokter, dan pasien membuka papan yang sama di HP berbeda. Gunakan <b>Kode Papan</b> yang sama di semua HP (contoh: <code>melati-bed3</code>).
+    </p>
+
+    <label style="font-size: 12px; font-weight: bold; color: #334155;">Supabase Project URL</label>
+    <input type="text" id="inputUrl" placeholder="https://xxx.supabase.co" style="width: 100%; padding: 8px; margin: 4px 0 12px 0; border: 1px solid #cbd5e1; border-radius: 6px; box-sizing: border-box;">
+
+    <label style="font-size: 12px; font-weight: bold; color: #334155;">Anon (public) key</label>
+    <input type="text" id="inputKey" placeholder="eyJhbGci..." style="width: 100%; padding: 8px; margin: 4px 0 12px 0; border: 1px solid #cbd5e1; border-radius: 6px; box-sizing: border-box;">
+
+    <label style="font-size: 12px; font-weight: bold; color: #334155;">Kode Papan (unik untuk ruangan/pasien)</label>
+    <input type="text" id="inputKode" placeholder="misal: melati-bed3" style="width: 100%; padding: 8px; margin: 4px 0 16px 0; border: 1px solid #cbd5e1; border-radius: 6px; box-sizing: border-box;">
+
+    <button onclick="simpanPengaturanSync()" style="width: 100%; background: #0284c7; color: white; padding: 10px; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; margin-bottom: 8px;">
+      Simpan & Hubungkan
+    </button>
+    
+    <button onclick="putusKoneksiSync()" style="width: 100%; background: #e2e8f0; color: #334155; padding: 8px; border: none; border-radius: 6px; font-weight: bold; cursor: pointer;">
+      Putuskan / Reset
+    </button>
+  </div>
+</div>       
+</body> 
 </html>
